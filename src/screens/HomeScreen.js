@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Text, Button, View } from 'react-native'
+import { GAMBannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
 const HomeScreen = ({navigation}) => {
 
@@ -17,6 +18,13 @@ const HomeScreen = ({navigation}) => {
       title="Display Rewarded Ads"
     />
     </View>
+    <GAMBannerAd
+        unitId={TestIds.BANNER}
+        sizes={[BannerAdSize.FULL_BANNER]}
+        requestOptions={{
+          requestNonPersonalizedAdsOnly: true,
+        }}
+      />
     </View>
   )
 }
